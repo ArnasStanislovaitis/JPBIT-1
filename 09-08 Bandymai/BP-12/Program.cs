@@ -12,13 +12,13 @@ namespace Fraziu_spausdintuvas
 
         static void FraziuSpausdintuvas()
         {
-            Console.WriteLine("Iveskite fraze");
+            Console.WriteLine("Iveskite fraz");
             string Fraze = Console.ReadLine();
             Console.WriteLine("Iveskite kiek kartu norite isvesti fraze i ekrana");
             int Kartai = int.Parse(Console.ReadLine());
             for (int i = 0; i < Kartai; i++)
             {
-                Console.WriteLine(Fraze);
+                Console.Write(Fraze);
             }
 
         }
