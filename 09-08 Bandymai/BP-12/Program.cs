@@ -20,7 +20,10 @@ namespace Fraziu_spausdintuvas
             {
                 Console.Write(Fraze);
             }
-
+            for (int i = 0; i < 5; i++)
+            {
+                Console.WriteLine("Spausdinu PENKIS kartus");
+            }
         }
     }
 }
