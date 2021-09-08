@@ -6,6 +6,7 @@ namespace ciklas_1_21
     {
         static void Main(string[] args)
         {
+            Console.WriteLine("arge");
             for (int i = 1; i < 21; i++)
             {
                 int a = 5;
