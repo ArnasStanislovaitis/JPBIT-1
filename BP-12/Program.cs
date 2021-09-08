@@ -18,7 +18,7 @@ namespace Fraziu_spausdintuvas
             int Kartai = int.Parse(Console.ReadLine());
             for (int i = 0; i < Kartai; i++)
             {
-                Console.WriteLine(Fraze);
+                Console.Write(Fraze);
             }
 
         }
