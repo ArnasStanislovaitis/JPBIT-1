@@ -18,6 +18,8 @@ namespace Mano_darbas_darbas
                 Console.WriteLine(vardas);
             }
 
+            var Jonas = 5;
+
         }
        static void Parametras(int a, int b)
        {
