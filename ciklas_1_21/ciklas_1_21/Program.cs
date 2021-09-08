@@ -6,7 +6,11 @@ namespace ciklas_1_21
     {
         static void Main(string[] args)
         {
+
             Console.WriteLine("arge");
+
+            Console.WriteLine("asdgf");
+
             for (int i = 1; i < 21; i++)
             {
                 int a = 5;
