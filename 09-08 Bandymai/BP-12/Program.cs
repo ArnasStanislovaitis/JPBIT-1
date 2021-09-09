@@ -12,7 +12,8 @@ namespace Fraziu_spausdintuvas
 
         static void FraziuSpausdintuvas()
         {
-            Console.WriteLine("Iveskite fraz");
+            // Komentaras 
+            Console.WriteLine("Iveskite fraze");
             string Fraze = Console.ReadLine();
             Console.WriteLine("Iveskite kiek kartu norite isvesti fraze i ekrana");
             int Kartai = int.Parse(Console.ReadLine());
