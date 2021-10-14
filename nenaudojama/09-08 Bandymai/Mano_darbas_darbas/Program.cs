@@ -7,7 +7,7 @@ namespace Mano_darbas_darbas
         static void Main(string[] args)
         {
             Console.WriteLine("Iveskite pirma skaiciu");
-		int slyva = 1;
+		//int slyva = 1;
             int x=int.Parse(Console.ReadLine());
             Console.WriteLine("Iveskite antra skaiciu");
             int y = int.Parse(Console.ReadLine());
@@ -18,7 +18,7 @@ namespace Mano_darbas_darbas
                 Console.WriteLine(vardas);
             }
 
-            var Jonas = 5;
+            //var Jonas = 5;
 
         }
        static void Parametras(int a, int b)

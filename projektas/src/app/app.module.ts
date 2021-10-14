@@ -1,8 +1,9 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
+import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { FormsModule,ReactiveFormsModule } from '@angular/forms';
 import { PagrindinisComponent } from './puslapiai/pagrindinis/pagrindinis.component';
 import { MeniuComponent } from './komponentai/meniu/meniu.component';
 import { PrisijungimasComponent } from './komponentai/prisijungimas/prisijungimas.component';
@@ -28,7 +29,10 @@ import { ZinuteComponent } from './komponentai/zinute/zinute.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
