@@ -1,0 +1,36 @@
+
+#kontaktaiStilius{
+background-image:url("kontaktai_retro.jpg")
+}
+
+.virsus{
+   
+
+}
+
+#vidurys{
+     display: flex;
+     flex-direction: row;
+     justify-content: space-around;
+     align-content: space-between;
+    
+}
+
+.apcia{
+  box-sizing: content-box;  
+  width: 300px;
+  height: 100px;
+  padding: 30px;  
+  border: 10px solid blue;
+}
+
+
+.vardai{
+
+}
+
+.parasytiZinute{
+    display:flex;
+    flex-direction: column;
+    align-content: center;
+}
