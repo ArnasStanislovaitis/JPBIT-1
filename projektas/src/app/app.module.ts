@@ -13,6 +13,7 @@ import { VartotojaiComponent } from './komponentai/vartotojai/vartotojai.compone
 import { KontaktaiComponent } from './puslapiai/kontaktai/kontaktai.component';
 import { PokalbiaiComponent } from './komponentai/pokalbiai/pokalbiai.component';
 import { ZinuteComponent } from './komponentai/zinute/zinute.component';
+import { TestComponent } from './komponentai/test/test.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { ZinuteComponent } from './komponentai/zinute/zinute.component';
     VartotojaiComponent,
     KontaktaiComponent,
     PokalbiaiComponent,
-    ZinuteComponent
+    ZinuteComponent,
+    TestComponent
   ],
   imports: [
     BrowserModule,

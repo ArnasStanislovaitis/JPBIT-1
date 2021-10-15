@@ -1,1 +1,8 @@
-<p>pokalbiai works!</p>
+<ul *ngIf="messages">
+    <div *ngFor="let x of messages" [title]="x.id">
+        <span>{{x.date}}</span>
+        <span>{{x.user}}</span>
+        <span>{{x.body}}</span>
+    </div>
+</ul>
+

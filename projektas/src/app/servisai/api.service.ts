@@ -14,8 +14,13 @@ export class ApiService implements OnInit {
   loginUrl = this.url + '/api/login';
   users: any = [];
   messages: any = [];
+
   ngOnInit() {
 
+  }
+
+  login(auth: any): Observable<string> {
+    return this.http.post<any>(this.loginUrl, auth);
   }
 
   getUsers(): Observable<string> {
@@ -36,16 +41,17 @@ export class ApiService implements OnInit {
     //let params = new HttpParams().set('name', JSON.stringify(user));
     //return this.http.post<any>(this.usersUrl + (id ? '/' + id : ''), params)
     //  .do(user => this.user = user);
-    const headers = { 'Content-Type': 'application/json'}
+    //const headers = { 'Content-Type': 'application/json'}
     //const headers = { 'Content-Type': 'application/x-www-form-urlencoded'}
-    const body = JSON.stringify(user);
-    return this.http.post<any>(this.usersUrl + (id ? '/' + id : ''), body,{headers:headers});
+    //const body = JSON.stringify(user);
+    //return this.http.post<any>(this.usersUrl + (id ? '/' + id : ''), body,{headers:headers});
+    return this.http.post<any>(this.usersUrl + (id ? '/' + id : ''), user);
   }
-  /*
-    delUser(id: number, user: User): Observable<string> {
-      return this.http.delete<any>(this.usersUrl + '/' + id, user);
-    }
-  */
+
+  delUser(id: number): Observable<string> {
+    return this.http.delete<any>(this.usersUrl + '/' + id);
+  }
+
   getMessages(): Observable<string> {
     return this.http.get<any>(this.messagesUrl);
   }
@@ -58,12 +64,12 @@ export class ApiService implements OnInit {
     return this.http.put<any>(this.messagesUrl + '/' + id, message);
   }
 
-  postMessage(id: number, message: Message): Observable<string> {
+  postMessage(id: number, message: any): Observable<string> {
     return this.http.post<any>(this.messagesUrl + '/' + id, message);
   }
 
-  delMessage(id: number, message: Message): Observable<string> {
-    return this.http.delete<any>(this.messagesUrl + '/' + id, message);
+  delMessage(id: number): Observable<string> {
+    return this.http.delete<any>(this.messagesUrl + '/' + id);
   }
 }
 
