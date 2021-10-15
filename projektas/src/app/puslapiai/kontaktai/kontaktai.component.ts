@@ -11,5 +11,7 @@ export class KontaktaiComponent implements OnInit {
 
   ngOnInit(): void {
   }
-
+  sisutiIsKontaktu(){
+    
+  }
 }
