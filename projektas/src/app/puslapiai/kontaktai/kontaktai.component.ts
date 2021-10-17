@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-
 @Component({
   selector: 'app-kontaktai',
   templateUrl: './kontaktai.component.html',
@@ -8,10 +7,11 @@ import { Component, OnInit } from '@angular/core';
 export class KontaktaiComponent implements OnInit {
 
   constructor() { }
-
+  
   ngOnInit(): void {
   }
-  sisutiIsKontaktu(){
+  siustiIsKontaktu(){
     
   }
+  
 }

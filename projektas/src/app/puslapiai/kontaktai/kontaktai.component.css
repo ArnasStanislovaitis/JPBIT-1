@@ -1,21 +1,29 @@
+*{
+  margin: 0vh,0vw;
+}
 
-#kontaktaiStilius{
-  background-image: url('~src/assets/kontaktai_retro.jpg');
-  border-image-width: 100%;
+
+.kontaktaiStilius{
+  display: flex;
+  flex-direction: column;
+  background-image: url( '~src/assets/kontaktai_retro.jpg');
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-image:resize;
 }
 
 .virsus{
-   
-
+ size: 300px;
+ text-align: center;
 }
 
 #vidurys{
-     display: flex;
-     flex-direction: row;
-     justify-content: space-around;
-     align-content: space-between;
-     margin-bottom: 10px;
-    
+ display: flex;
+ flex-direction: row;
+ justify-content: space-around;
+ align-content: space-between;
+ margin-bottom: 10px;    
 }
 
 .apacia{
@@ -24,22 +32,55 @@
   justify-content: space-around;
   align-content: space-between;
   background-color:transparent;
-  margin-top: 10px;
-  color: powderblue;
+  margin: 0px;
+  padding: 10%;
+  color: rgb(44, 238, 18);
 }
 
 .vardai{
-color: powderblue;
+color: rgb(44, 238, 18);
 }
 
 .parasytiZinute{
     display:flex;
     flex-direction: column;
     align-content: center;
-    color: powderblue;
+    color: rgb(44, 238, 18);
 }
+
 #zinute-kont{
   box-sizing: border-box;
   width: 300px;
-  height: 300px;
+  height: 200px;
+}
+
+#siusti:hover{
+  cursor:pointer;
+  background-color:rgb(44, 238, 18);
+  color: aliceblue;
+}
+
+#siusti{
+  margin: 10px;
+  font-size: 20px;
+ border-radius: 10px;
+}
+
+#zemelapis{
+ box-sizing: border-box;
+  height: 20pt;
+  width: 20pt;
+}
+
+.eilerastisPasleptas{
+ display: none;
+box-sizing: content-box;
+}
+
+.eilerastis:hover+.eilerastisPasleptas{
+position:absolute;
+color:tomato;
+font-size: 20px;
+display: block;
+background-color: whitesmoke;
 }
