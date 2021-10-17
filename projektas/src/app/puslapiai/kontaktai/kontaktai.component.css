@@ -1,0 +1,45 @@
+
+#kontaktaiStilius{
+  background-image: url('~src/assets/kontaktai_retro.jpg');
+  border-image-width: 100%;
+}
+
+.virsus{
+   
+
+}
+
+#vidurys{
+     display: flex;
+     flex-direction: row;
+     justify-content: space-around;
+     align-content: space-between;
+     margin-bottom: 10px;
+    
+}
+
+.apacia{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-content: space-between;
+  background-color:transparent;
+  margin-top: 10px;
+  color: powderblue;
+}
+
+.vardai{
+color: powderblue;
+}
+
+.parasytiZinute{
+    display:flex;
+    flex-direction: column;
+    align-content: center;
+    color: powderblue;
+}
+#zinute-kont{
+  box-sizing: border-box;
+  width: 300px;
+  height: 300px;
+}
