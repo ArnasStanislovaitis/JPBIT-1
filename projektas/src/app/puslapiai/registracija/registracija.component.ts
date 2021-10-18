@@ -51,6 +51,11 @@ export class RegistracijaComponent implements OnInit {
     return this.api.usersUrl;
   }
 
+  pereiti(){
+    window.open('pagrindinis');
+  }
+  
+
 }
 
 

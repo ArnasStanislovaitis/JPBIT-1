@@ -14,7 +14,7 @@
     <input id="pass-word" name="password" placeholder="Slaptazodis" formControlName="password" type="password">
     </div>
     <div class="mygtukas">
-    <button type="submit" [disabled]="!UserForm.valid">Registruotis</button>
+    <button type="submit" (click)="pereiti()" [disabled]="!UserForm.valid"  >Registruotis</button>
     </div>
 </form>
 
