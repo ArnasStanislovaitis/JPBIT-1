@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { FormControl, FormGroup, Validators, FormBuilder} from '@angular/forms';
+import { ApiService } from 'src/app/servisai/api.service';
 
 @Component({
   selector: 'app-vartotojai',
@@ -7,9 +9,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class VartotojaiComponent implements OnInit {
 
-  constructor() { }
+users: any = [];
 
-  ngOnInit(): void {
+constructor(private api: ApiService) {
+}
+
+get usersUrl(): string {
+  return this.api.usersUrl;
+}
+
+  ngOnInit() {
+    this.getUsers();
+    }
+
+  getUsers() {
+    this.api.getUsers().subscribe(data => this.users = data, error => console.log(error));
   }
 
 }

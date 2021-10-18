@@ -1,0 +1,35 @@
+.vartotojai {
+    /*border-style: double;
+    width: 200px;*/
+    display: inline-block;
+    width: 150px;
+    margin: 5% auto;
+    border-radius: 255px 15px 225px 15px/15px 225px 15px 255px;
+    padding: 1em;
+    line-height: 1.5em;
+    background: hsla(67, 95%, 95%, 1);
+    border: solid 5px hsla(0, 95%, 35%, 1);
+}
+@media only screen and (max-width: 767px) {
+    .people-list {
+        height: 465px;
+        width: 100%;
+        overflow-x: auto;
+        background: #fff;
+        left: -400px;
+        display: none
+    }
+    .people-list.open {
+        left: 0
+    }
+    .chat {
+        margin: 0
+    }
+    .chat .chat-header {
+        border-radius: 0.55rem 0.55rem 0 0
+    }
+    .chat-history {
+        height: 300px;
+        overflow-x: auto
+    }
+}
