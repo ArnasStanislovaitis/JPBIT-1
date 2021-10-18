@@ -11,6 +11,7 @@
   background-size: cover;
   background-repeat: no-repeat;
   background-image:resize;
+ 
 }
 
 .virsus{
@@ -34,18 +35,22 @@
   background-color:transparent;
   margin: 0px;
   padding: 10%;
-  color: rgb(44, 238, 18);
+ 
 }
 
-.vardai{
-color: rgb(44, 238, 18);
+.vardai,.parasytiZinute,.kontaktai{
+  background: rgba(233, 177, 47, 0.431)
 }
 
+.vardai,h3,p,label{
+  font-weight: bold;
+  color: #000000;
+}
+  
 .parasytiZinute{
     display:flex;
     flex-direction: column;
     align-content: center;
-    color: rgb(44, 238, 18);
 }
 
 #zinute-kont{
@@ -56,7 +61,7 @@ color: rgb(44, 238, 18);
 
 #siusti:hover{
   cursor:pointer;
-  background-color:rgb(44, 238, 18);
+  background-color:rgb(238, 143, 18);
   color: aliceblue;
 }
 
@@ -72,6 +77,9 @@ color: rgb(44, 238, 18);
   width: 20pt;
 }
 
+.eilerastis{
+  color: antiquewhite;
+}
 .eilerastisPasleptas{
  display: none;
 box-sizing: content-box;
@@ -80,7 +88,7 @@ box-sizing: content-box;
 .eilerastis:hover+.eilerastisPasleptas{
 position:absolute;
 color:tomato;
-font-size: 20px;
+font-size: 15px;
 display: block;
 background-color: whitesmoke;
 }
@@ -90,8 +98,12 @@ background-color: whitesmoke;
  .zemelapis{
    display: none;
  }
+ #zinute-kont{
+  box-sizing: border-box;
+  width: 200px;
+  height: 150px;
 }
-
+}
 
 @media (min-width: 576px) and (max-width: 767.98px) { 
   .zemelapis{

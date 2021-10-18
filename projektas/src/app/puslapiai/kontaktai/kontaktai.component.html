@@ -25,13 +25,13 @@
                     width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
             </div>
 
-            <div>
-                <form class="parasytiZinute">
-                    <label for="na-me-kont">Vardas</label><input id="na-me-kont" name="nameKont">
-                    <label for="e-mail-kont">Email</label><input type="email" id="e-mail-kont" name="emailKont">
+            <div >
+                <form class="parasytiZinute" #zinuteIsKontaktu ="ngForm"(ngSubmit)="siustiZinute(zinuteIsKontaktu)">
+                    <label for="na-me-kont">Vardas</label><input type="text" id="na-me-kont" name="nameKont" ngModel>
+                    <label for="e-mail-kont">Email</label><input type="email" id="e-mail-kont" name="emailKont" ngModel>
                     <label for="zinute-kont">Parašykite žinutę</label><textarea type="text" id="zinute-kont"
-                        name="zinuteKont"></textarea>
-                    <button (click)=siustiIsKontaktu() id="siusti">Siųsti</button>
+                        name="zinuteKont"ngModel></textarea>
+                    <button type='submit' id="siusti">Siųsti</button>
                 </form>
             </div>
 
@@ -41,9 +41,9 @@
 
 
             <div>
-
+               
             </div>
-            <div>
+            <div class="kontaktai">
                 <p style="size: 20px;">KONTAKTAI</p>
                 <p>Telefonas 9876345</p>
                 <p>Adresas: Smiltynės g. 3, Klaipėda 93100</p>
