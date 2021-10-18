@@ -10,13 +10,13 @@ import { ApiService } from 'src/app/servisai/api.service';
 
 export class RegistracijaComponent implements OnInit {
 
-  users: any = [];
+
   arTuscia: number = 0;
-  
+
   constructor(private api: ApiService) { }
 
   ngOnInit() {
-    this.getUsers();
+
   }
 
   UserForm = new FormGroup(
@@ -26,30 +26,15 @@ export class RegistracijaComponent implements OnInit {
       password: new FormControl('', [Validators.required]),
     })
 
-  getUsers() {
-    this.api.getUsers().subscribe(data => this.users = data, error => console.log(error));
-  }
-  postUser(body: any) {
-    this.api.postUser(0, body).subscribe(data => {
+  postUser() {
+    this.api.postUser(0, this.UserForm.value).subscribe(data => {
       console.log(data)
       this.UserForm.reset()
+      window.location.href=('/pagrindinis');
     }, error => console.log(error));
   }
 
-  newUser(e: any): boolean {
-    let formData = new FormData(e.target);
-    this.postUser(formData);
-    return true
-  }
-
-  get usersUrl(): string {
-    return this.api.usersUrl;
-  }
-
-  pereiti() {
-    window.open('pagrindinis');
-  }
-
+  
 
 }
 
