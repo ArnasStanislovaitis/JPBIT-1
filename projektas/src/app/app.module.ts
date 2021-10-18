@@ -7,7 +7,7 @@ import { FormsModule,ReactiveFormsModule } from '@angular/forms';
 import { PagrindinisComponent } from './puslapiai/pagrindinis/pagrindinis.component';
 import { MeniuComponent } from './komponentai/meniu/meniu.component';
 import { PrisijungimasComponent } from './komponentai/prisijungimas/prisijungimas.component';
-import { RegistracijaComponent } from './komponentai/registracija/registracija.component';
+import { RegistracijaComponent } from './puslapiai/registracija/registracija.component';
 import { AtkurimasComponent } from './komponentai/atkurimas/atkurimas.component';
 import { VartotojaiComponent } from './komponentai/vartotojai/vartotojai.component';
 import { KontaktaiComponent } from './puslapiai/kontaktai/kontaktai.component';
