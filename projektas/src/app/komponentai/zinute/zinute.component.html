@@ -1,4 +1,4 @@
-<form  [formGroup]="MessageForm" method="post" [action]="messagesUrl" enctype="application/x-www-form-urlencoded" target="hidden"
+<form [formGroup]="MessageForm" method="post" [action]="messagesUrl" enctype="application/x-www-form-urlencoded" target="hidden"
     (submit)=onSubmit($event)>
     <label for="bo-dy">Zinute</label><input id="bo-dy" name="body" formControlName="body">
     <input id="bo-dy" name="user" formControlName="user" type="hidden">

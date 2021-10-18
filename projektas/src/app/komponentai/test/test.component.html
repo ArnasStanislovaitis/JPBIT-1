@@ -1,8 +1,8 @@
-<!--
+
 <ul *ngIf="users">
     <option *ngFor="let x of users">{{x.name}}</option>
 </ul>
--->
+
 <form [formGroup]="UserForm" method="post" [action]="usersUrl" (ngSubmit)="newUser($event)">
     <label for="na-me">Vardas</label><input id="na-me" name="name" formControlName="name">
     <label for="e-mail">Email</label><input id="e-mail" name="email" formControlName="email" [email]="true"> 
