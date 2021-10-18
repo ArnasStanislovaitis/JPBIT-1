@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormControl, Validators, FormBuilder } from '@angular/forms';
+import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { ApiService } from 'src/app/servisai/api.service';
 
 @Component({
@@ -12,24 +12,19 @@ export class RegistracijaComponent implements OnInit {
 
   users: any = [];
   arTuscia: number = 0;
-  UserForm: FormGroup;
-  constructor(private api: ApiService, private formBuilder: FormBuilder) {
-    this.UserForm = formBuilder.group({
-      'name': [null],
-      'email': [null],
-      'password': [null]
-    });
-  }
+  
+  constructor(private api: ApiService) { }
 
   ngOnInit() {
     this.getUsers();
-    this.UserForm = new FormGroup(
-      {
-        name: new FormControl('', [Validators.required]),
-        email: new FormControl('', [Validators.required]),
-        password: new FormControl('', [Validators.required]),
-      })
   }
+
+  UserForm = new FormGroup(
+    {
+      name: new FormControl('', [Validators.required]),
+      email: new FormControl('', [Validators.required]),
+      password: new FormControl('', [Validators.required]),
+    })
 
   getUsers() {
     this.api.getUsers().subscribe(data => this.users = data, error => console.log(error));
@@ -51,10 +46,10 @@ export class RegistracijaComponent implements OnInit {
     return this.api.usersUrl;
   }
 
-  pereiti(){
+  pereiti() {
     window.open('pagrindinis');
   }
-  
+
 
 }
 
