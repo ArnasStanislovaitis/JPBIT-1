@@ -3,18 +3,18 @@
 
 <div>
 <h1> Registracija</h1>
-<form>
+<form [formGroup]="UserForm" method="post" [action]="usersUrl" (ngSubmit)="newUser($event)">
     <div class="vardas">
-    <input id="na-me2" name="name" placeholder="Vardas">
+    <input id="na-me2" name="name" placeholder="Vardas" formControlName="name">
     </div>
     <div>
-    <input id="e-mail" name="email" placeholder="Email">
+    <input id="e-mail" name="email" placeholder="Email" formControlName="email" [email]="true">
     </div>
     <div>
-    <input id="pass-word" name="password" placeholder="Slaptazodis">
+    <input id="pass-word" name="password" placeholder="Slaptazodis" formControlName="password" type="password">
     </div>
     <div class="mygtukas">
-    <button type="submit">Registruotis</button>
+    <button type="submit" [disabled]="!UserForm.valid">Registruotis</button>
     </div>
 </form>
 
