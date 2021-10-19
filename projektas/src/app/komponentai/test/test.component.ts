@@ -39,17 +39,12 @@ export class TestComponent implements OnInit {
     return this.api.loginUrl;
   }
 
-  getUsers() {
-    this.api.getUsers().subscribe((data: any) => {
-      // tik prisijunge vartotojai
-      this.users = data.filter((user: any) => user.is_logged === 1)
-    },
-      (error: any) => console.log(error));
-  }
+  /*getUsers() {
+    this.api.getUsers().subscribe(data => this.users = data, error => console.log(error));
+  }*/
 
   postUser(body: any) {
     this.api.postUser(0, body).subscribe(data => {
-
       console.log(data)
       this.UserForm.reset()
     }, error => console.log(error));

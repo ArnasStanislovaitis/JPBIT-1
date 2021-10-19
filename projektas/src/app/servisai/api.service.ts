@@ -13,6 +13,7 @@ export class ApiService implements OnInit {
   messagesUrl = this.url + '/api/messages';
   loginUrl = this.url + '/api/login';
   users: any = [];
+  usersNo: any = [];
   messages: any = [];
 
   ngOnInit() {
@@ -24,6 +25,9 @@ export class ApiService implements OnInit {
   }
 
   getUsers(): Observable<string> {
+    return this.http.get<any>(this.usersUrl);
+  }
+  getUsersNo(): Observable<string> {
     return this.http.get<any>(this.usersUrl);
   }
 
