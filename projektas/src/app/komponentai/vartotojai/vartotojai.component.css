@@ -8,6 +8,7 @@
     line-height: 1.5em;
     background: hsla(67, 95%, 95%, 1);
     border: solid 5px hsla(0, 95%, 35%, 1);
+    margin-left: 20px;
 }
 ul.userNo {
     color:hsla(0, 95%, 35%, 1);
