@@ -1,10 +1,12 @@
-<p>vartotojai works!</p>
+
 <div class="vartotojai">
     <ul *ngIf="users">
         <option *ngFor="let x of users">{{x.name}}</option>
     </ul>
+    <ul *ngIf="usersNo">
+        <option *ngFor="let y of usersNo">{{y.name}}</option>
+    </ul>
+    
 </div>
 
-<div class="people-list">
 
-</div>
