@@ -29,8 +29,11 @@ export class RegistracijaComponent implements OnInit {
   postUser() {
     this.api.postUser(0, this.UserForm.value).subscribe(data => {
       console.log(data)
-      this.UserForm.reset()
-      window.location.href=('/pagrindinis');
+      if ('errno' in data) alert(data.error)
+      else{
+        this.UserForm.reset()
+        window.location.href=('/pagrindinis');
+      }
     }, error => console.log(error));
   }
 
