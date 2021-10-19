@@ -1,4 +1,6 @@
+import { NONE_TYPE } from '@angular/compiler';
 import { Component, OnInit } from '@angular/core';
+import { NgForm } from '@angular/forms';
 @Component({
   selector: 'app-kontaktai',
   templateUrl: './kontaktai.component.html',
@@ -10,8 +12,12 @@ export class KontaktaiComponent implements OnInit {
   
   ngOnInit(): void {
   }
-  siustiIsKontaktu(){
-    
-  }
+
+ siustiZinute(forma: NgForm){
+   let zinute=forma.value;
+    console.log(zinute);
+    forma.resetForm();
+ }
+  
   
 }
