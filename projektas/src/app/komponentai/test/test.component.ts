@@ -39,9 +39,9 @@ export class TestComponent implements OnInit {
     return this.api.loginUrl;
   }
 
-  /*getUsers() {
+  getUsers() {
     this.api.getUsers().subscribe(data => this.users = data, error => console.log(error));
-  }*/
+  }
 
   postUser(body: any) {
     this.api.postUser(0, body).subscribe(data => {
