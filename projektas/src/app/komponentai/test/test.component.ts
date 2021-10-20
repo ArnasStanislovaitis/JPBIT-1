@@ -22,7 +22,7 @@ export class TestComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.getUsers();
+    // this.getUsers();
     this.UserForm = new FormGroup(
       {
         name: new FormControl('', [Validators.required]),
