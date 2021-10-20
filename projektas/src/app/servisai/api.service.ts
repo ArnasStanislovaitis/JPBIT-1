@@ -95,3 +95,12 @@ export interface Message {
   user: number;
   body: string;
 }
+
+
+
+// export interface resetPasword{
+//   email: string;
+//   login: string;
+//   password: string;
+
+// }
