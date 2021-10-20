@@ -1,5 +1,9 @@
 
 
+.white{
+    color: white;
+}
+
 div{
     display: flex;
     flex-direction: column;
