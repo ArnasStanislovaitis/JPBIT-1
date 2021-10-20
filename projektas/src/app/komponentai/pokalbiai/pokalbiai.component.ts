@@ -8,9 +8,7 @@ import { ApiService } from 'src/app/servisai/api.service';
 export class PokalbiaiComponent implements OnInit {
   //messages: any = []
   userId: number = 0
-  constructor(private api: ApiService) {
-
-  }
+  constructor(private api: ApiService) {  }
 
   ngOnInit() {
     this.getMessages();
@@ -19,10 +17,16 @@ export class PokalbiaiComponent implements OnInit {
   get messages(){
     return this.api.messages
   }
+  
   get messagesUrl(): string {
     return this.api.messagesUrl;
   }
 
+  getUserName(id:number){
+    let user=this.api.users.filter((user:any)=> user.id===id)
+    return user.length===1?user[0].name:'Anonimas'
+  }
+  
   getMessages() {
     this.api.getMessages().subscribe(data => this.api.messages = data, error => console.log(error));
   }

@@ -10,25 +10,25 @@ import { ApiService } from 'src/app/servisai/api.service';
 
 export class TestComponent implements OnInit {
 
-  users: any = [];
   arTuscia: number = 0;
-  UserForm: FormGroup;
-  constructor(private api: ApiService, private formBuilder: FormBuilder) {
-    this.UserForm = formBuilder.group({
-      'name': [null],
-      'email': [null],
-      'password': [null]
+  UserForm: FormGroup = new FormGroup(
+    {
+      name: new FormControl('', [Validators.required]),
+      email: new FormControl('', [Validators.required]),
+      password: new FormControl('', [Validators.required]),
     });
-  }
+  LoginForm: FormGroup = new FormGroup(
+    {
+      email: new FormControl('', [Validators.required]),
+      password: new FormControl('', [Validators.required]),
+    });
+  TokenForm: FormGroup = new FormGroup(
+    {
+      token: new FormControl('', [Validators.required])
+    });
+  constructor(private api: ApiService) { }
 
   ngOnInit() {
-    // this.getUsers();
-    this.UserForm = new FormGroup(
-      {
-        name: new FormControl('', [Validators.required]),
-        email: new FormControl('', [Validators.required]),
-        password: new FormControl('', [Validators.required]),
-      })
   }
 
   get usersUrl(): string {
@@ -39,8 +39,16 @@ export class TestComponent implements OnInit {
     return this.api.loginUrl;
   }
 
+  get user(): any {
+    return this.api.user;
+  }
+
+  get users(): any {
+    return this.api.users;
+  }
+
   getUsers() {
-    this.api.getUsers().subscribe(data => this.users = data, error => console.log(error));
+    this.api.getUsers().subscribe(data => this.api.users = data, error => console.log(error));
   }
 
   postUser(body: any) {
@@ -50,47 +58,25 @@ export class TestComponent implements OnInit {
     }, error => console.log(error));
   }
 
-  doLogin(body: any, f: any) {
-    this.api.login(body).subscribe(data => {
-      console.log(data)
-      f.reset()
-    }, error => console.log(error));
-  }
-
   newUser(e: any): boolean {
     let formData = new FormData(e.target);
     this.postUser(formData);
     return true
   }
 
-  onSubmit1(e: any) {
-    console.log(e)
-    if ('name' in e.target.elements) {
-      let name: string = e.target.elements['name'].value
-      console.log(name)
-
-      return name.length ? e.target.submit() : null
-    }
-    if ('email' in e.target.elements) {
-      let name: string = e.target.elements['email'].value
-      console.log(name)
-
-      return name.length ? e.target.submit() : null
-    }
-    return false
+  doLogin(body: any, f: any) {
+    this.api.login(body).subscribe(data => {
+      console.table(data)
+      this.api.user = data
+      f.reset()
+    }, error => console.log(error));
   }
 
-  onSubmit(e: any) {
-    console.log(e)
+  loginUser(e: any): boolean {
     let formData = new FormData(e.target);
-
-    if ('name' in e.target.elements) {
-      this.postUser(formData);
-    } else {
-      this.doLogin(formData, e.target)
-    }
-
+    this.doLogin(formData, e.target);
     return false
   }
- 
+
+
 }
