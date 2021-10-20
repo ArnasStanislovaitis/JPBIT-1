@@ -80,7 +80,6 @@ input:hover,#zinute-kont:hover{
 }
 
 #siusti{
-<<<<<<< Updated upstream
   margin-top: 12px;
     width: 100%;
     padding: 20px;
@@ -91,11 +90,6 @@ input:hover,#zinute-kont:hover{
     border-radius: 5px;
     color: white;
     transition: 0.3s;
-=======
-  margin: 10px;
-  font-size: 30px;
-  border-radius: 10px;
->>>>>>> Stashed changes
 }
 
 #zemelapis{
