@@ -33,7 +33,11 @@ export class ZinuteComponent implements OnInit {
     this.api.postMessage(0, body).subscribe(data => {
       console.log(data)
       f.reset()
+      this.getMessages()
     }, error => console.log(error));
+  }
+  getMessages() {
+    this.api.getMessages().subscribe(data => this.api.messages = data, error => console.log(error));
   }
 
   onSubmit(e: any) {
