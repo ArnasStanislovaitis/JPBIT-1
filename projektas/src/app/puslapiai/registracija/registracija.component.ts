@@ -25,6 +25,7 @@ export class RegistracijaComponent implements OnInit {
       name: new FormControl('', [Validators.required]),
       email: new FormControl('', [Validators.required]),
       password: new FormControl('', [Validators.required]),
+      emailAtkurimas: new FormControl('', [Validators.required])
     })
 
   postUser() {
@@ -37,9 +38,15 @@ export class RegistracijaComponent implements OnInit {
       }
     }, error => console.log(error));
   }
-
-  
-
+atkurti=false;
+  slaptazodzioAtkurimas(){
+    this.atkurti=true;
+  }
+  siustiAtkurimui(){
+this.UserForm.value.emailAtkurimas;
+console.log(this.UserForm.value.emailAtkurimas);
+this.atkurti=false;
+  }
 }
 
 
