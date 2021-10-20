@@ -92,5 +92,7 @@ export class TestComponent implements OnInit {
 
     return false
   }
-
+  slaptazodzioAtkurimas(){
+    
+  }
 }
