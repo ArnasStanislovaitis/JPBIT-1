@@ -1,5 +1,6 @@
 *{
   margin: 0vh,0vw;
+ 
 }
 
 
@@ -119,11 +120,6 @@ background-color: whitesmoke;
  .zemelapis{
    display: none;
  }
- #zinute-kont{
-  box-sizing: border-box;
-  width: 200px;
-  height: 150px;
-}
 }
 
 @media (min-width: 576px) and (max-width: 767.98px) { 
