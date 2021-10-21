@@ -1,6 +1,6 @@
 import { NgIf } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { FormGroup, FormControl, Validators, NgForm } from '@angular/forms';
 import { ApiService } from 'src/app/servisai/api.service';
 
 @Component({
@@ -46,7 +46,7 @@ atkurti=false;
 this.UserForm.value.emailAtkurimas;
 console.log(this.UserForm.value.emailAtkurimas);
 this.atkurti=false;
-
+this.UserForm.reset();
   }
 }
 
