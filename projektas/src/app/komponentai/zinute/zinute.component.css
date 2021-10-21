@@ -1,6 +1,9 @@
 .zinute {
     max-height: fit-content;
     font-style: italic;
+    font-family: 'Lobster', Georgia, Times, serif;
+    font-size: 20px;
+    line-height: 30px;
     
 }
 .remelis {
