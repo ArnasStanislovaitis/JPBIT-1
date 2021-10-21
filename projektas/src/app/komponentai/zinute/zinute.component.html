@@ -1,5 +1,5 @@
-<form [formGroup]="MessageForm" (ngSubmit)="onSubmit($event)">
-    <label for="bo-dy">Zinute</label><input id="bo-dy" name="body" formControlName="body">
+<form class="remelis" [formGroup]="MessageForm" (ngSubmit)="onSubmit($event)">
+    <label class="zinute" for="bo-dy">Žinutė_</label><input id="bo-dy" name="body" formControlName="body">
     <input id="u-ser" name="user" formControlName="user" type="hidden">
     <button type="submit" [disabled]="!MessageForm.valid">Siusti</button>
 </form>

@@ -1,3 +1,17 @@
 .zinute {
     max-height: fit-content;
+    font-style: italic;
+    
+}
+.remelis {
+    display: inline-block;
+    width: 350px;
+    height: 80px;
+    margin: 5% auto;
+    border-radius: 255px 15px 225px 15px/15px 225px 15px 255px;
+    padding: 1em;
+    line-height: 1.5em;
+    background: hsla(67, 95%, 95%, 1);
+    border: solid 5px hsla(0, 95%, 35%, 1);
+    margin-left: 20px;
 }

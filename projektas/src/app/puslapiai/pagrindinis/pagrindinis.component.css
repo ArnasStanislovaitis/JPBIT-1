@@ -1,14 +1,28 @@
-.chat .vartotojai {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    order: 2;
-    
-    
-
-
+.komponentai {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    align-items: center;
 }
 
-.zinute {
-    height: 250px;
+.vartotojai { 
+   /* display: flex;
+    flex-direction:row;*/
+    margin-left: 100px;
+  
+
+}
+#susirasinejimas {
+/* display: grid;
+ grid-template-rows: repeat(auto-fill, minimax (300px, lfr));
+*/
+margin-left: 200px;
+}
+
+
+.chat, .zinute {
+  
+    
+    
+    
+    
 }
