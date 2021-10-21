@@ -32,6 +32,6 @@ export class PokalbiaiComponent implements OnInit {
   }
 
   doURL(input:string){
-    return  input.replace(/(https?:\/\/[^ ]*)/g,'<a title="$1" href="$1" target="_blank">Link</a>');
+    return  input?input.replace(/(https?:\/\/[^ ]*)/g,'<a title="$1" href="$1" target="_blank" >Link</a>'):'';
   }
 }

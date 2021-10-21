@@ -13,7 +13,7 @@ export class ApiService implements OnInit {
   messagesUrl = this.url + '/api/messages';
   loginUrl = this.url + '/api/login';
   tokenUrl = this.url + '/api/token';
-  user :any={id:0}
+  user :any={id:0,name:'Anonimas'}
   users: any = [];
   userId: Number = 0;
   messages: any = [];
