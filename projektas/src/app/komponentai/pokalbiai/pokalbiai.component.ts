@@ -31,4 +31,7 @@ export class PokalbiaiComponent implements OnInit {
     this.api.getMessages().subscribe(data => this.api.messages = data, error => console.log(error));
   }
 
+  doURL(input:string){
+    return  input.replace(/(https?:\/\/[^ ]*)/g,'<a title="$1" href="$1" target="_blank">Link</a>');
+  }
 }
