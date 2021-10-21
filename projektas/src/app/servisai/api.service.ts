@@ -23,7 +23,7 @@ export class ApiService implements OnInit {
   }
 
   login(auth: any): Observable<string> {
-    return this.http.post<any>(this.loginUrl+(auth.has('email')?'/'+auth.get('email'):''), auth);
+    return this.http.post<any>(this.loginUrl, auth);
   }
 
   token(auth: any): Observable<string> {

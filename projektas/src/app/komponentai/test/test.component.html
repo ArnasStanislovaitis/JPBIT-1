@@ -24,6 +24,6 @@
     <button type="submit" [disabled]="!TokenForm.valid">Login</button>
 </form>
 <form [formGroup]="RestoreForm" (ngSubmit)="getToken($event)">
-    <label for="em-ail">Token</label><input id="e-mail" name="email" type="email" formControlName="email">
+    <label for="em-ail">Token</label><input id="em-ail" name="email" type="email" formControlName="email">
     <button type="submit" [disabled]="!RestoreForm.valid">Reset</button>
 </form>
