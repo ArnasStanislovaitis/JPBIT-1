@@ -3,7 +3,7 @@
     <div *ngFor="let x of messages" [title]="x.id">
         <span>{{x.date}}</span>
         <span>{{getUserName(x.user)}}</span>
-        <span>{{x.body}}</span>
+        <span [innerHTML]="doURL(x.body)"></span>
     </div>
 </ul>
 </div>
