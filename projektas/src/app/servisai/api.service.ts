@@ -12,6 +12,7 @@ export class ApiService implements OnInit {
   usersUrl = this.url + '/api/users';
   messagesUrl = this.url + '/api/messages';
   loginUrl = this.url + '/api/login';
+  tokenUrl = this.url + '/api/token';
   user :any={id:0}
   users: any = [];
   userId: Number = 0;
@@ -22,7 +23,11 @@ export class ApiService implements OnInit {
   }
 
   login(auth: any): Observable<string> {
-    return this.http.post<any>(this.loginUrl+(auth.has('token')?'/'+auth.get('token'):''), auth);
+    return this.http.post<any>(this.loginUrl+(auth.has('email')?'/'+auth.get('email'):''), auth);
+  }
+
+  token(auth: any): Observable<string> {
+    return this.http.post<any>(this.tokenUrl+(auth.has('token')?'/'+auth.get('token'):''), auth);
   }
 
   getUsers(): Observable<string> {

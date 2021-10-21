@@ -26,6 +26,11 @@ export class TestComponent implements OnInit {
     {
       token: new FormControl('', [Validators.required])
     });
+
+  RestoreForm: FormGroup = new FormGroup(
+    {
+      email: new FormControl('', [Validators.required])
+    });
   constructor(private api: ApiService) { }
 
   ngOnInit() {
@@ -75,6 +80,20 @@ export class TestComponent implements OnInit {
   loginUser(e: any): boolean {
     let formData = new FormData(e.target);
     this.doLogin(formData, e.target);
+    return false
+  }
+
+  doToken(body: any, f: any) {
+    this.api.token(body).subscribe(data => {
+      console.table(data)
+      this.api.user = data
+      f.reset()
+    }, error => console.log(error));
+  }
+
+  getToken(e:any){
+    let formData = new FormData(e.target);
+    this.doToken(formData, e.target);
     return false
   }
 

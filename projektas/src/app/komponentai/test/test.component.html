@@ -8,18 +8,22 @@
     <label for="na-me">Vardas</label><input id="na-me" name="name" formControlName="name">
     <label for="e-mail">Email</label><input id="e-mail" name="email" formControlName="email" [email]="true">
     <label for="pass-word">Password</label><input id="pass-word" name="password" formControlName="password"
-        type="password">
+        type="password" autocomplete="new-password">
     <button type="submit" [disabled]="!UserForm.valid">Registruoti</button>
 </form>
 
 <form [formGroup]="LoginForm" (ngSubmit)="loginUser($event)">
     <label for="e-mail2">Email</label><input id="e-mail2" name="email" type="email" formControlName="email">
     <label for="pass-word2">Password</label><input id="pass-word2" name="password" type="password"
-        formControlName="password">
+        formControlName="password" autocomplete="new-password">
     <button type="submit" [disabled]="!LoginForm.valid">Login</button>
 </form>
 
 <form [formGroup]="TokenForm" (ngSubmit)="loginUser($event)">
     <label for="to-ken">Token</label><input id="to-ken" name="token" type="text" formControlName="token">
     <button type="submit" [disabled]="!TokenForm.valid">Login</button>
+</form>
+<form [formGroup]="RestoreForm" (ngSubmit)="getToken($event)">
+    <label for="em-ail">Token</label><input id="e-mail" name="email" type="email" formControlName="email">
+    <button type="submit" [disabled]="!RestoreForm.valid">Reset</button>
 </form>
