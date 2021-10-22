@@ -1,4 +1,12 @@
 import { Component, OnInit } from '@angular/core';
+import { AngularFirestore } from '@angular/fire/compat/firestore';
+import { Observable } from 'rxjs';
+
+
+interface Item {
+  nuotrauka: string,
+  vardas: string
+};
 
 @Component({
   selector: 'app-root',
@@ -7,7 +15,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AppComponent implements OnInit {
   title = 'projektas';
-  ngOnInit() {
+
+  suniukai : any[] = [];
+
+  constructor(firestore: AngularFirestore) {
+    firestore.collection('suniukai').valueChanges().subscribe((x : any) => this.suniukai = x);
+  }
+
+  async ngOnInit() {
 
   }
+
+
+
+
 }
