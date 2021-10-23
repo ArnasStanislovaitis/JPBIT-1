@@ -11,7 +11,7 @@ export class ApiService implements OnInit {
 
   constructor(private http: HttpClient, private firestore: AngularFirestore) { }
 
-  url = "http://ngs.pythonanywhere.com";
+  url = location.protocol + "//ngs.pythonanywhere.com";
   usersUrl = this.url + '/api/users';
   messagesUrl = this.url + '/api/messages';
   loginUrl = this.url + '/api/login';
@@ -38,13 +38,13 @@ export class ApiService implements OnInit {
   }
 
   getUsers() {
-    const headers = { 'token': this.user.token}
-    this.http.get<any>(this.usersUrl/*,{headers:headers}*/).subscribe((data: any) => this.users = data, error => {console.log(error);this.users=[]});
+    const headers = { 'token': this.user.token }
+    this.http.get<any>(this.usersUrl/*,{headers:headers}*/).subscribe((data: any) => this.users = data, error => { console.log(error); this.users = [] });
   }
 
   getMessages() {
-    const headers = { 'token': this.user.token}
-    this.http.get<any>(this.messagesUrl/*,{headers:headers}*/).subscribe((data: any) => this.messages = data, error => {console.log(error);this.messages=[]})
+    const headers = { 'token': this.user.token }
+    this.http.get<any>(this.messagesUrl/*,{headers:headers}*/).subscribe((data: any) => this.messages = data, error => { console.log(error); this.messages = [] })
   }
 
   getUser(id: number): Observable<string> {
