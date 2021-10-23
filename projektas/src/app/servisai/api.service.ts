@@ -2,6 +2,8 @@ import { Injectable, OnInit } from '@angular/core';
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
+import { AngularFirestore } from '@angular/fire/compat/firestore';
+
 @Injectable({
   providedIn: 'root'
 })
@@ -17,7 +19,7 @@ export class ApiService implements OnInit {
   users: any = [];
   userId: Number = 0;
   messages: any = [];
-
+  suniukai: any = [];
   ngOnInit() {
 
   }

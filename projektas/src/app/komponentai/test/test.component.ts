@@ -2,6 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators, FormBuilder } from '@angular/forms';
 import { ApiService } from 'src/app/servisai/api.service';
 
+import { AngularFirestore } from '@angular/fire/compat/firestore';
+
+
 @Component({
   selector: 'app-test',
   templateUrl: './test.component.html',
@@ -31,9 +34,17 @@ export class TestComponent implements OnInit {
     {
       email: new FormControl('', [Validators.required])
     });
-  constructor(private api: ApiService) { }
+
+
+  constructor(private api: ApiService, private firestore: AngularFirestore) {  }
 
   ngOnInit() {
+    this.getUsers()
+    this.getSuniukai()
+  }
+
+  get suniukai(){
+    return this.api.suniukai
   }
 
   get usersUrl(): string {
@@ -52,6 +63,9 @@ export class TestComponent implements OnInit {
     return this.api.users;
   }
 
+  getSuniukai(){
+    this.firestore.collection('suniukai').valueChanges().subscribe((x: any) => this.api.suniukai = x);
+  }
   getUsers() {
     this.api.getUsers().subscribe(data => this.api.users = data, error => console.log(error));
   }
@@ -91,7 +105,7 @@ export class TestComponent implements OnInit {
     }, error => console.log(error));
   }
 
-  getToken(e:any){
+  getToken(e: any) {
     let formData = new FormData(e.target);
     this.doToken(formData, e.target);
     return false

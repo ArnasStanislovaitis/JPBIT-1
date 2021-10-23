@@ -1,6 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { AngularFirestore } from '@angular/fire/compat/firestore';
-import { Observable } from 'rxjs';
 
 
 interface Item {
@@ -16,13 +14,9 @@ interface Item {
 export class AppComponent implements OnInit {
   title = 'projektas';
 
-  suniukai : any[] = [];
 
-  constructor(firestore: AngularFirestore) {
-    firestore.collection('suniukai').valueChanges().subscribe((x : any) => this.suniukai = x);
-  }
 
-  async ngOnInit() {
+ngOnInit() {
 
   }
 
