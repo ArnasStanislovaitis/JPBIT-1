@@ -1,10 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 
-interface Item {
-  nuotrauka: string,
-  vardas: string
-};
+
 
 @Component({
   selector: 'app-root',

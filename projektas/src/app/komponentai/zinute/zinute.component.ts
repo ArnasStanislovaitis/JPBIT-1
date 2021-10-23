@@ -25,16 +25,13 @@ export class ZinuteComponent implements OnInit {
   get userName(){
     return this.api.user.name || 'Anonimas'
   }
+  
   postMessage(body: any, f: any) {
     this.api.postMessage(0, body).subscribe(data => {
       console.log(data)
       f.reset()
-      this.getMessages()
+      this.api.getMessages()
     }, error => console.log(error));
-  }
-
-  getMessages() {
-    this.api.getMessages().subscribe(data => this.api.messages = data, error => console.log(error));
   }
 
   onSubmit(e: any) {
