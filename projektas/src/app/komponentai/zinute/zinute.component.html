@@ -1,7 +1,5 @@
-
-
 <form [formGroup]="MessageForm" (ngSubmit)="onSubmit($event)">
-    <textarea class="zinute"placeholder="Rašyti žinutę" id="bo-dy" name="body" formControlName="body"></textarea>
+    <label for="bo-dy">Zinute</label><input id="bo-dy" name="body" formControlName="body">
     <input id="u-ser" name="user" formControlName="user" type="hidden">
-    <button type="submit" class="mygtukas" [disabled]="!MessageForm.valid">Siusti</button>
+    <button type="submit" [disabled]="!MessageForm.valid">Siusti</button>
 </form>
