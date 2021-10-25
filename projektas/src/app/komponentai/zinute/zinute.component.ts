@@ -34,7 +34,10 @@ export class ZinuteComponent implements OnInit {
     }, error => console.log(error));
   }
 
- 
+  getMessages() {
+    this.api.getMessages().subscribe(data => this.api.messages = data, error => console.log(error));
+  
+  }
 
   onSubmit(e: any) {
     let formData = new FormData(e.target);

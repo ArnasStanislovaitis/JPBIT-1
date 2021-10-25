@@ -1,6 +1,6 @@
 
 
-<form MessageForm (ngSubmit)="onSubmit($event)">
+<form [formGroup]="MessageForm" (ngSubmit)="onSubmit($event)">
     <textarea class="zinute"placeholder="Rašyti žinutę" id="bo-dy" name="body" formControlName="body"></textarea>
     <input id="u-ser" name="user" formControlName="user" type="hidden">
     <button type="submit" class="mygtukas" [disabled]="!MessageForm.valid">Siusti</button>
