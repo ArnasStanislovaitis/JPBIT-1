@@ -5,6 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 
 import { AngularFireModule } from '@angular/fire/compat';
 import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
+import { AngularFireAuthModule } from "@angular/fire/compat/auth";
 import { environment } from 'src/environments/environment';
 
 import { AppComponent } from './app.component';
@@ -41,7 +42,8 @@ import { TestComponent } from './komponentai/test/test.component';
     FormsModule,
     ReactiveFormsModule,
     AngularFireModule.initializeApp(environment.firebase),
-    AngularFirestoreModule
+    AngularFirestoreModule,
+    AngularFireAuthModule
   ],
   providers: [],
   bootstrap: [AppComponent]
