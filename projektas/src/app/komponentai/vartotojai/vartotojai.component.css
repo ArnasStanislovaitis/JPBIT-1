@@ -1,6 +1,11 @@
 
 
-ul.userNo {
+.userYes {
+    color:rgb(51, 207, 45);
+    text-decoration: rgb(25, 219, 19);
+}
+
+.userNo {
     color:hsla(0, 95%, 35%, 1);
     text-decoration: hsla(0, 95%, 35%, 1);
 }
@@ -15,8 +20,9 @@ ul.userNo {
     background: hsla(67, 95%, 95%, 1);
     border: solid 5px hsla(0, 95%, 35%, 1);
     overflow-y: auto;
-    font-style: italic;
+    /*font-style: italic;
     font-size: 30px;
     color: #daa638;
     text-shadow: 2px 2px #FF0000;
+    */
 }
