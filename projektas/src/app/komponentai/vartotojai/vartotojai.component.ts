@@ -12,6 +12,7 @@ export class VartotojaiComponent implements OnInit {
 
   usersYes: any = [];
   usersNo: any = [];
+  usersNull: any = [];
 
   constructor(private api: ApiService) {
   }
@@ -30,6 +31,7 @@ export class VartotojaiComponent implements OnInit {
       this.api.users = data
       this.usersYes = this.api.users.filter((user: any) => user.is_logged === 1)
       this.usersNo =this.api.users.filter((user: any) => user.is_logged === 0)
+      this.usersNull =this.api.users.filter((user: any) => user.is_logged === null)
     },
 
       (error: any) => console.log(error));

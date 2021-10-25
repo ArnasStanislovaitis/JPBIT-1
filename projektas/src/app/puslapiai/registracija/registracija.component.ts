@@ -13,13 +13,6 @@ export class RegistracijaComponent implements OnInit {
 
 
   arTuscia: number = 0;
-
-  constructor(private api: ApiService) { }
-
-  ngOnInit() {
-
-  }
-
   UserForm = new FormGroup(
     {
       name: new FormControl('', [Validators.required]),
@@ -28,7 +21,26 @@ export class RegistracijaComponent implements OnInit {
       emailAtkurimas: new FormControl('')
     })
 
-  postUser() {
+    RestoreForm: FormGroup = new FormGroup(
+      {
+        email: new FormControl('', [Validators.required])
+      });
+
+  constructor(private api: ApiService) { }
+
+  ngOnInit() {
+  }
+  
+
+  postUser(body: any) {
+    this.api.postUser(0, body).subscribe(data => {
+      console.log(data)
+      this.UserForm.reset()
+    }, error => console.log(error));
+    
+
+
+    /*
     let duomenys = {
       name: this.UserForm.value.name,
       email: this.UserForm.value.email,
@@ -37,13 +49,19 @@ export class RegistracijaComponent implements OnInit {
     console.log(duomenys)
     this.api.postUser(0, duomenys).subscribe(data => {
       console.log(data)
-      if ('errno' in data) alert(data.error)
+      if ('error' in data) alert(data.error)
       else{
         this.UserForm.reset()
         window.location.href=('/pagrindinis');
       }
-    }, error => console.log(error));
+    }, error => console.log(error)); */
   }
+  newUser(e: any): boolean {
+    let formData = new FormData(e.target);
+    this.postUser(formData);
+    return true
+  }
+
 atkurti=false;
   slaptazodzioAtkurimas(){
     this.atkurti=true;

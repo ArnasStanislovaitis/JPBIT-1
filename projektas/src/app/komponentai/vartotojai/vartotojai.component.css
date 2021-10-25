@@ -9,6 +9,11 @@
     color:hsla(0, 95%, 35%, 1);
     text-decoration: hsla(0, 95%, 35%, 1);
 }
+
+.userNull {
+    color:rgb(121, 128, 25);
+    text-decoration: rgb(178, 189, 28);
+}
 .vartotojai {
     
     width: 300px;
