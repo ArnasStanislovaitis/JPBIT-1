@@ -1,5 +1,5 @@
 *{
-margin: 10vh,10vw;    
+margin: 0 !important;   
 }
 
 
@@ -8,6 +8,7 @@ margin: 10vh,10vw;
     display:flex;
    
     flex-direction:row;
+    justify-content: space-evenly;
     align-content: space-around;
 
    
