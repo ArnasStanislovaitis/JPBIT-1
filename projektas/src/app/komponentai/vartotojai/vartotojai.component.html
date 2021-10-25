@@ -1,10 +1,10 @@
-<link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
+
 <div class="vartotojai">
     <ul *ngIf="usersYes">
-        <li class="userYes" *ngFor="let x of usersYes">{{x.name}}</li>
+        <option *ngFor="let x of usersYes">{{x.name}}</option>
     </ul>
     <ul *ngIf="usersNo">
-        <li class="userNo" *ngFor="let y of usersNo">{{y.name}}</li>
+        <option *ngFor="let y of usersNo">{{y.name}}</option>
     </ul>
     
 </div>

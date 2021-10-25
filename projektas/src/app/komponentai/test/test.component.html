@@ -1,15 +1,8 @@
-
+<!--
 <ul *ngIf="users">
-    <li *ngFor="let x of users">{{x.name}}</li>
+    <option *ngFor="let x of users">{{x.name}}</option>
 </ul>
-
-
-<ul>
-    <li *ngFor="let item of suniukai">
-        {{ item.vardas }}
-    </li>
-</ul>
-
+-->
 
 <form [formGroup]="UserForm" (ngSubmit)="newUser($event)">
     <label for="na-me">Vardas</label><input id="na-me" name="name" formControlName="name">
