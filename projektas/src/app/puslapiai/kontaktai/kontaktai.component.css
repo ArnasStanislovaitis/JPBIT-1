@@ -3,7 +3,7 @@
  
 }
 
-.kontaktaiStilius{
+.kontaktaiStiliuss{
   display: flex;
   flex-direction: column;
   background-image: url( '~src/assets/kontaktai_retro.jpg');
