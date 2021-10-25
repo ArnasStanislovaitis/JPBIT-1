@@ -25,11 +25,17 @@ export class RegistracijaComponent implements OnInit {
       name: new FormControl('', [Validators.required]),
       email: new FormControl('', [Validators.required]),
       password: new FormControl('', [Validators.required]),
-      emailAtkurimas: new FormControl('', [Validators.required])
+      emailAtkurimas: new FormControl('')
     })
 
   postUser() {
-    this.api.postUser(0, this.UserForm.value).subscribe(data => {
+    let duomenys = {
+      name: this.UserForm.value.name,
+      email: this.UserForm.value.email,
+      password: this.UserForm.value.password
+    }
+    console.log(duomenys)
+    this.api.postUser(0, duomenys).subscribe(data => {
       console.log(data)
       if ('errno' in data) alert(data.error)
       else{
