@@ -1,14 +1,32 @@
-.chat .vartotojai {
+
+.pagrindinis{
+    display:flex;
+    flex-direction: row;
+    justify-content: left;
+    align-content: space-between;
+}
+.vartotojai{
     display: flex;
     flex-direction: row;
-    justify-content: center;
-    order: 2;
-    
-    
+    justify-content: space-around;
+    align-content: space-between;
+    background-color:transparent;
+    margin-left:  100px;
+    margin-right: 300px;
+    padding: 10%;  
+}
 
 
+.chat  {
+    display: flex;
+    flex-direction: row;
+    /* justify-content:right; */
+    /* order: 2; */
+    text-align: center;
+    font-size: 20px;
 }
 
 .zinute {
-    height: 250px;
+    height: 100px;
+    width: 300px;
 }

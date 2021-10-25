@@ -10,7 +10,8 @@
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
-  background-image:resize;
+ 
+  
 }
 
 .virsus{
@@ -83,6 +84,7 @@ input:hover,#zinute-kont:hover{
 }
 
 #siusti{
+  
   margin-top: 12px;
     width: 100%;
     padding: 20px;
@@ -121,6 +123,7 @@ background-color: whitesmoke;
 @media (max-width: 575.98px) { 
  .zemelapis{
    display: none;
+   background-position-y: 100%;
  }
 }
 
