@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators, FormBuilder } from '@angular/forms';
 import { ApiService } from 'src/app/servisai/api.service';
 
+
 @Component({
   selector: 'app-test',
   templateUrl: './test.component.html',
@@ -10,7 +11,6 @@ import { ApiService } from 'src/app/servisai/api.service';
 
 export class TestComponent implements OnInit {
 
-  arTuscia: number = 0;
   UserForm: FormGroup = new FormGroup(
     {
       name: new FormControl('', [Validators.required]),
@@ -31,17 +31,17 @@ export class TestComponent implements OnInit {
     {
       email: new FormControl('', [Validators.required])
     });
+
+
   constructor(private api: ApiService) { }
 
   ngOnInit() {
+    this.api.getUsers()
+    this.api.getSuniukai()
   }
 
-  get usersUrl(): string {
-    return this.api.usersUrl;
-  }
-
-  get loginUrl(): string {
-    return this.api.loginUrl;
+  get suniukai() {
+    return this.api.suniukai
   }
 
   get user(): any {
@@ -50,10 +50,6 @@ export class TestComponent implements OnInit {
 
   get users(): any {
     return this.api.users;
-  }
-
-  getUsers() {
-    this.api.getUsers().subscribe(data => this.api.users = data, error => console.log(error));
   }
 
   postUser(body: any) {
@@ -91,7 +87,7 @@ export class TestComponent implements OnInit {
     }, error => console.log(error));
   }
 
-  getToken(e:any){
+  getToken(e: any) {
     let formData = new FormData(e.target);
     this.doToken(formData, e.target);
     return false

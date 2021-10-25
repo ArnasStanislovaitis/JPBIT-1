@@ -2,21 +2,24 @@ import { Injectable, OnInit } from '@angular/core';
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
+import { AngularFirestore } from '@angular/fire/compat/firestore';
+
 @Injectable({
   providedIn: 'root'
 })
 export class ApiService implements OnInit {
 
-  constructor(private http: HttpClient) { }
-  url = "http://ngs.pythonanywhere.com";
+  constructor(private http: HttpClient, private firestore: AngularFirestore) { }
+
+  url = location.protocol + "//ngs.pythonanywhere.com";
   usersUrl = this.url + '/api/users';
   messagesUrl = this.url + '/api/messages';
   loginUrl = this.url + '/api/login';
   tokenUrl = this.url + '/api/token';
-  user :any={id:0}
+  user: any = { id: 0, name: 'Anonimas', token: 'Prisiloginti reikia' }
   users: any = [];
-  userId: Number = 0;
   messages: any = [];
+  suniukai: any = [];
 
   ngOnInit() {
 
@@ -27,14 +30,21 @@ export class ApiService implements OnInit {
   }
 
   token(auth: any): Observable<string> {
-    return this.http.post<any>(this.tokenUrl+(auth.has('token')?'/'+auth.get('token'):''), auth);
+    return this.http.post<any>(this.tokenUrl + (auth.has('token') ? '/' + auth.get('token') : ''), auth);
   }
 
-  getUsers(): Observable<string> {
-    return this.http.get<any>(this.usersUrl);
+  getSuniukai() {
+    this.firestore.collection('suniukai').valueChanges().subscribe((x: any) => this.suniukai = x, error => console.log(error));
   }
-  getUsersNo(): Observable<string> {
-    return this.http.get<any>(this.usersUrl);
+
+  getUsers() {
+    const headers = { 'token': this.user.token }
+    this.http.get<any>(this.usersUrl/*,{headers:headers}*/).subscribe((data: any) => this.users = data, error => { console.log(error); this.users = [] });
+  }
+
+  getMessages() {
+    const headers = { 'token': this.user.token }
+    this.http.get<any>(this.messagesUrl/*,{headers:headers}*/).subscribe((data: any) => this.messages = data, error => { console.log(error); this.messages = [] })
   }
 
   getUser(id: number): Observable<string> {
@@ -60,10 +70,6 @@ export class ApiService implements OnInit {
 
   delUser(id: number): Observable<string> {
     return this.http.delete<any>(this.usersUrl + '/' + id);
-  }
-
-  getMessages(): Observable<string> {
-    return this.http.get<any>(this.messagesUrl);
   }
 
   getMessage(id: number): Observable<string> {
@@ -102,7 +108,10 @@ export interface Message {
   body: string;
 }
 
-
+export interface Item {
+  nuotrauka: string,
+  vardas: string
+};
 
 // export interface resetPasword{
 //   email: string;

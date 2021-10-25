@@ -1,5 +1,4 @@
 .vartotojai {
-    
     display: inline-block;
     width: 500px;
     height: 800px;
@@ -15,7 +14,17 @@
     color: #daa638;
     text-shadow: 2px 2px #FF0000;
 }
-/* ul.userNo {
-    color:hsla(0, 95%, 35%, 1);
-    text-decoration: hsla(0, 95%, 35%, 1);
-} */
+
+.userNo {
+    color: hsla(0, 95%, 35%, 1);
+    font-family: 'Lobster', Georgia, Times, serif;
+    font-size: 20px;
+    line-height: 30px;
+}
+
+.userYes {
+    color: rgb(67, 228, 19);
+    font-family: 'Lobster', Georgia, Times, serif;
+    font-size: 20px;
+    line-height: 30px;
+}
