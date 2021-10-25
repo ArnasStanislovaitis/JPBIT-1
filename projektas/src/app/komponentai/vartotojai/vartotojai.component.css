@@ -1,16 +1,22 @@
+
+
+ul.userNo {
+    color:hsla(0, 95%, 35%, 1);
+    text-decoration: hsla(0, 95%, 35%, 1);
+}
 .vartotojai {
     
-    display: inline-block;
-    width: 200px;
+    width: 300px;
+    height: 600px;
     margin: 5% auto;
     border-radius: 255px 15px 225px 15px/15px 225px 15px 255px;
     padding: 1em;
     line-height: 1.5em;
     background: hsla(67, 95%, 95%, 1);
     border: solid 5px hsla(0, 95%, 35%, 1);
-    margin-left: 20px;
-}
-ul.userNo {
-    color:hsla(0, 95%, 35%, 1);
-    text-decoration: hsla(0, 95%, 35%, 1);
+    overflow-y: auto;
+    font-style: italic;
+    font-size: 30px;
+    color: #daa638;
+    text-shadow: 2px 2px #FF0000;
 }

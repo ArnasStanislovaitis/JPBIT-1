@@ -1,10 +1,17 @@
-<div class="pokalbiai">
-<ul *ngIf="messages">
-    <div *ngFor="let x of messages" [title]="x.id">
-        <span>{{x.date}}</span>
-        <span>{{getUserName(x.user)}}</span>
-        <span [innerHTML]="doURL(x.body)"></span>
-    </div>
-</ul>
-</div>
 
+
+
+<div class="pokalbiai">
+   
+        <ul *ngIf="messages">
+            <div *ngFor="let x of messages" [title]="x.id">
+    
+                <div class="data"><span>{{x.date}}</span></div>
+    
+                <div class="vardas"><span class="input" role="textbox" contenteditable>{{ getUserName(x.user) }}</span></div>
+               
+                <div class="tekstas"><span [innerHTML]="doURL(x.body)">{{ x.body }}</span></div>
+                <hr>
+            </div>
+        </ul>
+    </div>
