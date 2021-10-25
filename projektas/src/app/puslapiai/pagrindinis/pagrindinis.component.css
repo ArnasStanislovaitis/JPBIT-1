@@ -26,7 +26,7 @@
     margin-left: 100px;
   
 
-.chat{
+.chat  {
     display: flex;
     flex-direction: row;
     /* justify-content:right; */
