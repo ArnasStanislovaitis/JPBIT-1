@@ -14,6 +14,9 @@ import { KontaktaiComponent } from './puslapiai/kontaktai/kontaktai.component';
 import { PokalbiaiComponent } from './komponentai/pokalbiai/pokalbiai.component';
 import { ZinuteComponent } from './komponentai/zinute/zinute.component';
 import { TestComponent } from './komponentai/test/test.component';
+import { AngularFireModule } from '@angular/fire/compat';
+import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
+import { environment } from 'src/environments/environment';
 
 @NgModule({
   declarations: [
@@ -34,7 +37,9 @@ import { TestComponent } from './komponentai/test/test.component';
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    AngularFireModule.initializeApp(environment.firebase),
+    AngularFirestoreModule
   ],
   providers: [],
   bootstrap: [AppComponent]
