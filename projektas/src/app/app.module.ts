@@ -16,6 +16,7 @@ import { ZinuteComponent } from './komponentai/zinute/zinute.component';
 import { TestComponent } from './komponentai/test/test.component';
 import { AngularFireModule } from '@angular/fire/compat';
 import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
+import{AngularFireAuthGuard}from'@angular/fire/compat/auth-guard';
 import { environment } from 'src/environments/environment';
 
 @NgModule({
@@ -30,7 +31,9 @@ import { environment } from 'src/environments/environment';
     KontaktaiComponent,
     PokalbiaiComponent,
     ZinuteComponent,
-    TestComponent
+    TestComponent,
+    AngularFireModule,
+    AngularFireAuthGuard
   ],
   imports: [
     BrowserModule,
