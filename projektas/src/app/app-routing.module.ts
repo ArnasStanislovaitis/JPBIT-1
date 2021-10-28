@@ -9,8 +9,7 @@ import{AngularFireAuthGuard}from '@angular/fire/compat/auth-guard';
 
 
 export const routes:Routes=[
-  {path:'',component:AppComponent},
-  {path:'items',component:PagrindinisComponent,canActivate:[AngularFireAuthGuard]},
+  { path:'items', component:PagrindinisComponent,canActivate:[AngularFireAuthGuard]},
   { path: 'kontaktai', component: KontaktaiComponent },
   { path: 'pagrindinis', component: PagrindinisComponent },
   { path: 'registracija', component: RegistracijaComponent },
