@@ -1,8 +1,8 @@
-import { NgIf } from '@angular/common';
+import { NgIf, registerLocaleData } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
+import { loggedIn } from '@angular/fire/compat/auth-guard';
 import { FormGroup, FormControl, Validators, NgForm } from '@angular/forms';
 import { ApiService } from 'src/app/servisai/api.service';
-
 
 @Component({
   selector: 'app-registracija',
@@ -39,6 +39,8 @@ export class RegistracijaComponent implements OnInit {
       this.UserForm.reset()
     }, error => console.log(error));
     
+ 
+
 
 
     /*
@@ -74,8 +76,19 @@ this.atkurti=false;
 this.UserForm.reset();
   }
 }
+ 
 
 
+// register(){
+//   this.auth.emailSignup(email,password);
+// }
+
+// login(){
+// this.auth.login(email,password);
+// }
+// logout(){
+//   this.auth.logout();
+// }
 
 
 
