@@ -16,8 +16,11 @@ import { ZinuteComponent } from './komponentai/zinute/zinute.component';
 import { TestComponent } from './komponentai/test/test.component';
 import { AngularFireModule } from '@angular/fire/compat';
 import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
-import{AngularFireAuthGuard}from'@angular/fire/compat/auth-guard';
+import { AngularFireAuthModule } from '@angular/fire/compat/auth';
 import { environment } from 'src/environments/environment';
+
+
+
 
 @NgModule({
   declarations: [
@@ -31,9 +34,8 @@ import { environment } from 'src/environments/environment';
     KontaktaiComponent,
     PokalbiaiComponent,
     ZinuteComponent,
-    TestComponent,
-    AngularFireModule,
-    AngularFireAuthGuard
+    TestComponent
+   
   ],
   imports: [
     BrowserModule,
@@ -42,7 +44,8 @@ import { environment } from 'src/environments/environment';
     FormsModule,
     ReactiveFormsModule,
     AngularFireModule.initializeApp(environment.firebase),
-    AngularFirestoreModule
+    AngularFirestoreModule,
+    AngularFireAuthModule
   ],
   providers: [],
   bootstrap: [AppComponent]

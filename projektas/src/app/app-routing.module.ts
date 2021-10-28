@@ -4,7 +4,8 @@ import { AppComponent } from './app.component';
 import { KontaktaiComponent } from './puslapiai/kontaktai/kontaktai.component';
 import { PagrindinisComponent } from './puslapiai/pagrindinis/pagrindinis.component';
 import { RegistracijaComponent } from './puslapiai/registracija/registracija.component';
-import{AngularFireAuthGuard, canActivate}from '@angular/fire/compat/auth-guard';
+import{AngularFireAuthGuard}from '@angular/fire/compat/auth-guard';
+
 
 
 export const routes:Routes=[

@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators, NgForm } from '@angular/forms';
 import { ApiService } from 'src/app/servisai/api.service';
 
+
 @Component({
   selector: 'app-registracija',
   templateUrl: './registracija.component.html',
