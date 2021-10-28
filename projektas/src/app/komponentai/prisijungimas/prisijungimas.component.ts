@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators, FormBuilder } from '@angular/forms';
+import { AuthService } from 'src/app/auth.service';
 import { ApiService } from 'src/app/servisai/api.service';
 
 
@@ -17,10 +18,16 @@ export class PrisijungimasComponent implements OnInit {
       password: new FormControl('', [Validators.required]),
     });
 
-  constructor(private api: ApiService) { }
+  constructor(private api: ApiService,private auth:AuthService) { }
 
   ngOnInit() {
   }
+
+  prisijungti() {
+    this.auth.login(this.LoginForm.value.email, this.LoginForm.value.password);
+   
+  }
+
 
   get usersUrl(): string {
     return this.api.usersUrl;

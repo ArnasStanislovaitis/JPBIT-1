@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/compat/auth';
 import { Router } from '@angular/router';
 
+
 @Injectable({
   providedIn: 'root'
 })
@@ -24,7 +25,7 @@ export class AuthService {
     
 
     emailSignup(email:string,password:string){
-      this.afAuth.signInWithEmailAndPassword(email,password)
+      this.afAuth.createUserWithEmailAndPassword(email,password);
       }
       // .then(value=>{
       //   console.log('Prisiregistrtuota',value);

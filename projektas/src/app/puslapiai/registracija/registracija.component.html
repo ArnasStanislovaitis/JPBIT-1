@@ -2,7 +2,7 @@
 <div>
 
     <h1 class=white> Registracija</h1>
-    <form [formGroup]="UserForm" (ngSubmit)="newUser($event)">
+    <form [formGroup]="UserForm" (ngSubmit)="registracija()">
         <div class="vardas">
             <input id="na-me2" name="name" placeholder="Vardas" formControlName="name">
         </div>
@@ -14,7 +14,7 @@
         </div>
         <div class="mygtukas">
             <button type="submit" [disabled]="!UserForm.valid">Registruotis</button>
-                  <!-- aprasytas slaptazodzio atkurimas -->
+                   <!-- aprasytas slaptazodzio atkurimas  -->
             <a (click)="slaptazodzioAtkurimas()" class="atkurimas">Pamiršai slaptažodį?</a>
             <div *ngIf="atkurti==true">
                 <input id="e-mail-atkurimas" name="emailAtkurimas" placeholder="Įveskite savo Email"
