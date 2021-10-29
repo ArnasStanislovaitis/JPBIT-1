@@ -4,4 +4,6 @@
     <label style="color: white; margin: 0px;" for="pass-word2">Password</label><input id="pass-word2" name="password" type="password"
         formControlName="password" autocomplete="new-password">
     <button style="margin: auto" type="submit" [disabled]="!LoginForm.valid">Login</button>
+    <button style="margin: auto" type="submit"(click)="atsijungti()">Logout</button>
 </form>
+

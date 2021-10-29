@@ -25,9 +25,9 @@ export class PrisijungimasComponent implements OnInit {
 
   prisijungti() {
     this.auth.login(this.LoginForm.value.email, this.LoginForm.value.password);
-   
+    this.LoginForm.reset();
   }
-
+  
 
   get usersUrl(): string {
     return this.api.usersUrl;
@@ -63,4 +63,7 @@ export class PrisijungimasComponent implements OnInit {
     }, error => console.log(error));
   }
 
+  atsijungti(){
+    this.auth.logout();
+  }
 }

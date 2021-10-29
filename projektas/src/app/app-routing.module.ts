@@ -9,11 +9,11 @@ import{AngularFireAuthGuard}from '@angular/fire/compat/auth-guard';
 
 
 export const routes:Routes=[
-  { path:'items', component:PagrindinisComponent,canActivate:[AngularFireAuthGuard]},
+ 
   { path: 'kontaktai', component: KontaktaiComponent },
-  { path: 'pagrindinis', component: PagrindinisComponent },
+  { path: 'pagrindinis', component: PagrindinisComponent,canActivate:[AngularFireAuthGuard]},
   { path: 'registracija', component: RegistracijaComponent },
-  { path: '**', component: PagrindinisComponent }];
+  { path: '**', component: RegistracijaComponent }];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

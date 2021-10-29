@@ -9,23 +9,12 @@ import { Router } from '@angular/router';
 export class AuthService {
 
   constructor(
-    private afAuth:AngularFireAuth){ }
-    // private router: Router 
+    private authService:AngularFireAuth,
+    private router: Router) { }
 
-    login(email:string,password:string){
-      this.afAuth.signInWithEmailAndPassword(email,password)
-      }
-      // .then(value=>{
-      //   console.log('Veikia');
-      //   this.router.navigateByUrl('/pargindinis');
-      // })
-      // .catch(err=>{
-      //   console.log('Nepavyksta',err.message);
-      // });
-    
 
-    emailSignup(email:string,password:string){
-      this.afAuth.createUserWithEmailAndPassword(email,password);
+emailSignup(email:string,password:string){
+      this.authService.createUserWithEmailAndPassword(email,password);
       }
       // .then(value=>{
       //   console.log('Prisiregistrtuota',value);
@@ -36,12 +25,25 @@ export class AuthService {
       // });   
     
 
-    logout(){
-      this.afAuth.signOut()
-      }
-      // .then(()=>{
-      //   this.router.navigate(['/']);
-      // });
+    login(email:string,password:string){
+      this.authService.signInWithEmailAndPassword(email,password)
+      .then(value=>{
+        console.log('Veikia');
+         this.router.navigateByUrl('/pagrindinis');
+      })
+       .catch(err=>{
+         console.log('Nepavyksta',err.message);
+      });
+    }
+
     
+
+    logout(){
+      this.authService.signOut()
+      
+      .then(()=>{
+      this.router.navigateByUrl('/registracija');
+    });
+    }
     
 }
