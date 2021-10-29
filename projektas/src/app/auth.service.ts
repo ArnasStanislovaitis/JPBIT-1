@@ -45,5 +45,5 @@ emailSignup(email:string,password:string){
       this.router.navigateByUrl('/registracija');
     });
     }
-    
+   
 }
