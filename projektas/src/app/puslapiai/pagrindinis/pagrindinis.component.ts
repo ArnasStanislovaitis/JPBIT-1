@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ApiService } from 'src/app/servisai/api.service';
+
 
 @Component({
   selector: 'app-pagrindinis',
@@ -7,9 +9,24 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PagrindinisComponent implements OnInit {
 
-  constructor() { }
+  constructor(private apiServisas: ApiService) {
+    this.apiServisas.getMessages().subscribe((duomenys:any)=>{ 
+      console.log(duomenys);
+      this.NerijausZinutes=duomenys;
+      console.log(this.NerijausZinutes);
+
+     });
+   }
 
   ngOnInit(): void {
+
   }
 
+  NerijausZinutes= [];
+  
+
+  import(){
+    let zinutes = this.apiServisas.getMessages();
+
+  }
 }
