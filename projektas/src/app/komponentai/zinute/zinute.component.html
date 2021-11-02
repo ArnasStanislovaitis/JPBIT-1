@@ -1,9 +1,19 @@
 
 
-<form  [formGroup]="MessageForm" (ngSubmit)="onSubmit($event)">
+<form  [formGroup]="MessageForm" (ngSubmit)="addMessages($event)">
    <div class="pagrindinis">
     <textarea class="zinute"placeholder="Rašyti žinutę" id="bo-dy" name="body" formControlName="body"></textarea>
     <input id="u-ser" name="user" formControlName="user" type="hidden">
     <button type="submit" class="mygtukas" [disabled]="!MessageForm.valid">Siusti</button>
 </div>
 </form>
+
+<!--
+<form  [formGroup]="MessageForm" (ngSubmit)="onSubmit($event)">
+    <div class="pagrindinis">
+     <textarea class="zinute"placeholder="Rašyti žinutę" id="bo-dy" name="body" formControlName="body"></textarea>
+     <input id="u-ser" name="user" formControlName="user" type="hidden">
+     <button type="submit" class="mygtukas" [disabled]="!MessageForm.valid">Siusti</button>
+ </div>
+ </form>
+ -->
