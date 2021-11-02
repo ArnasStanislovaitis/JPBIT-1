@@ -1,8 +1,12 @@
 import { NgIf, registerLocaleData } from '@angular/common';
+import { ValueTransformer } from '@angular/compiler/src/util';
 import { Component, OnInit } from '@angular/core';
 import { loggedIn } from '@angular/fire/compat/auth-guard';
 import { FormGroup, FormControl, Validators, NgForm } from '@angular/forms';
+import { AuthService } from 'src/app/auth.service';
 import { ApiService } from 'src/app/servisai/api.service';
+
+
 
 @Component({
   selector: 'app-registracija',
@@ -22,61 +26,70 @@ export class RegistracijaComponent implements OnInit {
       emailAtkurimas: new FormControl('')
     })
 
-    RestoreForm: FormGroup = new FormGroup(
-      {
-        email: new FormControl('', [Validators.required])
-      });
+  // RestoreForm: FormGroup = new FormGroup(
+  //   {
+  //     email: new FormControl('', [Validators.required])
+  //   });
 
-  constructor(private api: ApiService) { }
+  constructor(private api: ApiService,
+    private auth: AuthService) {}
 
   ngOnInit() {
   }
+
+
+  // postUser(body: any) {
+  //   this.api.postUser(0, body).subscribe(data => {
+  //     console.log(data)
+  //     this.UserForm.reset()
+  //   }, error => console.log(error));}
+
+
+  registracija() {    
+    this.auth.emailSignup(this.UserForm.value.email, this.UserForm.value.password);
+    this.UserForm.reset();
+  }
   
-
-  postUser(body: any) {
-    this.api.postUser(0, body).subscribe(data => {
-      console.log(data)
-      this.UserForm.reset()
-    }, error => console.log(error));
-    
- 
-
-
-
-    /*
-    let duomenys = {
-      name: this.UserForm.value.name,
-      email: this.UserForm.value.email,
-      password: this.UserForm.value.password
-    }
-    console.log(duomenys)
-    this.api.postUser(0, duomenys).subscribe(data => {
-      console.log(data)
-      if ('error' in data) alert(data.error)
-      else{
-        this.UserForm.reset()
-        window.location.href=('/pagrindinis');
-      }
-    }, error => console.log(error)); */
-  }
-  newUser(e: any): boolean {
-    let formData = new FormData(e.target);
-    this.postUser(formData);
-    return true
+  atsijungti(){
+    this.auth.logout();
   }
 
-atkurti=false;
-  slaptazodzioAtkurimas(){
-    this.atkurti=true;
+atkurti = false;
+  slaptazodzioAtkurimas() {
+    this.atkurti = true;
   }
-  siustiAtkurimui(){
-this.UserForm.value.emailAtkurimas;
-console.log(this.UserForm.value.emailAtkurimas);
-this.atkurti=false;
-this.UserForm.reset();
+  siustiAtkurimui() {
+    this.UserForm.value.emailAtkurimas;
+    console.log(this.UserForm.value.emailAtkurimas);
+    this.atkurti = false;
+    this.UserForm.reset();
   }
 }
- 
+
+/*  
+  let duomenys = {
+    name: this.UserForm.value.name,
+    email: this.UserForm.value.email,
+    password: this.UserForm.value.password
+  }
+  
+  console.log(duomenys)
+  this.api.postUser(0, duomenys).subscribe(data => {
+    console.log(data)
+    if ('error' in data) alert(data.error)
+    else{
+      this.UserForm.reset()
+      window.location.href=('/pagrindinis');
+    }
+  }, error => console.log(error)); */
+
+  // newUser(e: any): boolean {
+  //   let formData = new FormData(e.target);
+  //   this.postUser(formData);
+  //   return true
+  // }
+
+  
 
 
 // register(){
