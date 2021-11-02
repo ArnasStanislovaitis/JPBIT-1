@@ -1,4 +1,5 @@
 import { NgIf, registerLocaleData } from '@angular/common';
+import { ValueTransformer } from '@angular/compiler/src/util';
 import { Component, OnInit } from '@angular/core';
 import { loggedIn } from '@angular/fire/compat/auth-guard';
 import { FormGroup, FormControl, Validators, NgForm } from '@angular/forms';
@@ -31,7 +32,7 @@ export class RegistracijaComponent implements OnInit {
   //   });
 
   constructor(private api: ApiService,
-    private auth: AuthService) { }
+    private auth: AuthService) {}
 
   ngOnInit() {
   }
@@ -53,12 +54,17 @@ export class RegistracijaComponent implements OnInit {
     this.auth.logout();
   }
 
-
-
-
-
-
-
+atkurti = false;
+  slaptazodzioAtkurimas() {
+    this.atkurti = true;
+  }
+  siustiAtkurimui() {
+    this.UserForm.value.emailAtkurimas;
+    console.log(this.UserForm.value.emailAtkurimas);
+    this.atkurti = false;
+    this.UserForm.reset();
+  }
+}
 
 /*  
   let duomenys = {
@@ -83,18 +89,7 @@ export class RegistracijaComponent implements OnInit {
   //   return true
   // }
 
-  atkurti = false;
-  slaptazodzioAtkurimas() {
-    this.atkurti = true;
-  }
-  siustiAtkurimui() {
-    this.UserForm.value.emailAtkurimas;
-    console.log(this.UserForm.value.emailAtkurimas);
-    this.atkurti = false;
-    this.UserForm.reset();
-  }
-}
-
+  
 
 
 // register(){
