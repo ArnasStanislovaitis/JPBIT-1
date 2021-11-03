@@ -1,0 +1,33 @@
+.pagrindinis{
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+}
+
+.zinute{
+    display: inline-block;
+    width: 600px;
+    height: 200px;
+    margin-top: 5px;
+    border-radius: 255px 15px 225px 15px/15px 225px 15px 255px;
+    line-height: 1.5em;
+    background: hsla(67, 95%, 95%, 1);
+    border: solid 5px hsla(0, 95%, 35%, 1); 
+}
+
+.mygtukas{
+
+    margin: 10px;
+    width: 20%;
+    padding: 1em;
+    background-color:#CFB784;
+    border: solid 5px hsla(0, 95%, 35%, 1);
+    border-radius: 5px;
+    color: white;
+    transition: 0.3s;
+    
+}
+
+.mygtukas:hover{
+    background-color: hsla(0, 95%, 35%, 1);   
+}

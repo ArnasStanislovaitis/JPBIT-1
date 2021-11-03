@@ -11,5 +11,5 @@ export class AtkurimasComponent implements OnInit {
 
   ngOnInit(): void {
   }
-
+  
 }

@@ -1,20 +1,20 @@
 *{
   margin: 0vh,0vw;
+ 
 }
 
-
-.kontaktaiStilius{
+.kontaktaiStiliuss{
   display: flex;
   flex-direction: column;
   background-image: url( '~src/assets/kontaktai_retro.jpg');
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
-  background-image:resize;
  
 }
 
 .virsus{
+  margin-top: 5%;
  size: 300px;
  text-align: center;
 }
@@ -39,20 +39,39 @@
 }
 
 .vardai,.parasytiZinute,.kontaktai{
-  background: rgba(233, 177, 47, 0.431)
+  background-color:#CFB784,03;
 }
 
-.vardai,h3,p,label{
+.vardai,h3,p,label,a{
   font-weight: bold;
-  color: #000000;
+  color: white;
 }
-  
-.parasytiZinute{
-    display:flex;
-    flex-direction: column;
-    align-content: center;
-}
+  a:hover{
+    color: #C56824;
+    background: #eee5c7;
+   
+  }
 
+.parasytiZinute{
+  display:flex;
+  flex-direction: column;
+  align-content: center;
+}
+input{
+  width: 300px;
+  display: block;
+  padding: 20px;
+  font-size: 14px;
+  -webkit-appearance: none;
+  border: 1px solid;
+  border-radius: 5px;
+  outline: 0;
+  transition: 0.3s;
+}
+input:hover,#zinute-kont:hover{
+  background: #EADEB8;
+  
+}
 #zinute-kont{
   box-sizing: border-box;
   width: 300px;
@@ -60,19 +79,24 @@
 }
 
 #siusti:hover{
-  cursor:pointer;
-  background-color:rgb(238, 143, 18);
-  color: aliceblue;
+  background-color: #C56824;  
 }
 
 #siusti{
-  margin: 10px;
-  font-size: 20px;
- border-radius: 10px;
+  margin-top: 12px;
+    width: 100%;
+    padding: 20px;
+    background-color:#CFB784;
+    -webkit-appearance: none;
+    outline: 0;
+    border: 0;
+    border-radius: 5px;
+    color: white;
+    transition: 0.3s;
 }
 
 #zemelapis{
- box-sizing: border-box;
+  box-sizing: border-box;
   height: 20pt;
   width: 20pt;
 }
@@ -98,11 +122,6 @@ background-color: whitesmoke;
  .zemelapis{
    display: none;
  }
- #zinute-kont{
-  box-sizing: border-box;
-  width: 200px;
-  height: 150px;
-}
 }
 
 @media (min-width: 576px) and (max-width: 767.98px) { 
@@ -125,5 +144,5 @@ background-color: whitesmoke;
 
 
 @media (min-width: 1200px) { 
-
+  
 }

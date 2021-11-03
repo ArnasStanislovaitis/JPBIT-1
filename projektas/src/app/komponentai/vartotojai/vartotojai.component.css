@@ -1,15 +1,33 @@
+
+
+.userYes {
+    color:rgb(51, 207, 45);
+    text-decoration: rgb(25, 219, 19);
+}
+
+.userNo {
+    color:hsla(0, 95%, 35%, 1);
+    text-decoration: hsla(0, 95%, 35%, 1);
+}
+
+.userNull {
+    color:rgb(121, 128, 25);
+    text-decoration: rgb(178, 189, 28);
+}
 .vartotojai {
     
-    display: inline-block;
-    width: 200px;
+    width: 300px;
+    height: 600px;
     margin: 5% auto;
     border-radius: 255px 15px 225px 15px/15px 225px 15px 255px;
     padding: 1em;
     line-height: 1.5em;
     background: hsla(67, 95%, 95%, 1);
     border: solid 5px hsla(0, 95%, 35%, 1);
-}
-ul.userNo {
-    color:hsla(0, 95%, 35%, 1);
-    text-decoration: hsla(0, 95%, 35%, 1);
+    overflow-y: auto;
+    /*font-style: italic;
+    font-size: 30px;
+    color: #daa638;
+    text-shadow: 2px 2px #FF0000;
+    */
 }

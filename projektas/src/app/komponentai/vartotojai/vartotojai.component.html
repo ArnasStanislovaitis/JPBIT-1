@@ -1,10 +1,16 @@
 
 <div class="vartotojai">
-    <ul *ngIf="users">
-        <option *ngFor="let x of users">{{x.name}}</option>
+    
+    <ul class="userYes" *ngIf="usersYes">
+        <li *ngFor="let x of usersYes">{{x.name}}</li>
     </ul>
-    <ul *ngIf="usersNo">
-        <option *ngFor="let y of usersNo">{{y.name}}</option>
+
+    <ul class="userNo" *ngIf="usersNo">
+        <li *ngFor="let y of usersNo">{{y.name}}</li>
+    </ul>
+
+    <ul class="userNull" *ngIf="usersNull">
+        <li *ngFor="let y of usersNull">{{y.name}}</li>
     </ul>
     
 </div>

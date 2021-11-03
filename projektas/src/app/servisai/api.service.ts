@@ -12,8 +12,10 @@ export class ApiService implements OnInit {
   usersUrl = this.url + '/api/users';
   messagesUrl = this.url + '/api/messages';
   loginUrl = this.url + '/api/login';
+  tokenUrl = this.url + '/api/token';
+  user :any={id:0}
   users: any = [];
-  usersNo: any = [];
+  userId: Number = 0;
   messages: any = [];
 
   ngOnInit() {
@@ -22,6 +24,10 @@ export class ApiService implements OnInit {
 
   login(auth: any): Observable<string> {
     return this.http.post<any>(this.loginUrl, auth);
+  }
+
+  token(auth: any): Observable<string> {
+    return this.http.post<any>(this.tokenUrl+(auth.has('token')?'/'+auth.get('token'):''), auth);
   }
 
   getUsers(): Observable<string> {
@@ -95,3 +101,12 @@ export interface Message {
   user: number;
   body: string;
 }
+
+
+
+// export interface resetPasword{
+//   email: string;
+//   login: string;
+//   password: string;
+
+// }

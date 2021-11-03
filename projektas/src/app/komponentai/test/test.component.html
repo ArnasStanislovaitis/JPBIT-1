@@ -1,28 +1,30 @@
-
 <!--
 <ul *ngIf="users">
     <option *ngFor="let x of users">{{x.name}}</option>
 </ul>
 -->
 
-<form [formGroup]="UserForm" method="post" [action]="usersUrl" (ngSubmit)="newUser($event)">
+<form [formGroup]="UserForm" (ngSubmit)="newUser($event)">
     <label for="na-me">Vardas</label><input id="na-me" name="name" formControlName="name">
-    <label for="e-mail">Email</label><input id="e-mail" name="email" formControlName="email" [email]="true"> 
-    <label for="pass-word">Password</label><input id="pass-word" name="password" formControlName="password" type="password">
-    <button type="submit" [disabled]="!UserForm.valid">Naujas</button>
+    <label for="e-mail">Email</label><input id="e-mail" name="email" formControlName="email">
+    <label for="pass-word">Password</label><input id="pass-word" name="password" formControlName="password"
+        type="password" autocomplete="new-password">
+    <button type="submit" [disabled]="!UserForm.valid">Registruoti</button>
 </form>
 
-<form method="post" [action]="usersUrl" enctype="application/x-www-form-urlencoded" target="hidden"
-    (submit)=onSubmit($event)>
-    <label for="na-me1">Vardas</label><input id="na-me1" name="name">
-    <label for="e-mail1">Email</label><input id="e-mail1" name="email" type="email">
-    <label for="pass-word1">Password</label><input id="pass-word1" name="password" type="password">
-    <button type="submit">Naujas</button>
+<form [formGroup]="LoginForm" (ngSubmit)="loginUser($event)">
+    <label for="e-mail2">Email</label><input id="e-mail2" name="email" type="email" formControlName="email">
+    <label for="pass-word2">Password</label><input id="pass-word2" name="password" type="password"
+        formControlName="password" autocomplete="new-password">
+    <button type="submit" [disabled]="!LoginForm.valid">Login</button>
 </form>
-<form method="post" [action]="loginUrl" enctype="application/x-www-form-urlencoded" target="hidden"
-    (submit)=onSubmit($event)>
-    <label for="e-mail2">Email</label><input id="e-mail2" name="email" type="email">
-    <label for="pass-word2">Password</label><input id="pass-word2" name="password"  type="password">
-    <button type="submit">Login</button>
+
+<form [formGroup]="TokenForm" (ngSubmit)="loginUser($event)">
+    <label for="to-ken">Token</label><input id="to-ken" name="token" type="text" formControlName="token">
+    <button type="submit" [disabled]="!TokenForm.valid">Login</button>
 </form>
-<iframe name="hidden"></iframe>
+
+<form [formGroup]="RestoreForm" (ngSubmit)="getToken($event)">
+    <label for="em-ail">Email</label><input id="em-ail" name="email" type="email" formControlName="email">
+    <button type="submit" [disabled]="!RestoreForm.valid">Reset</button>
+</form>

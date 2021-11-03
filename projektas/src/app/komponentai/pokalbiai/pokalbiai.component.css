@@ -1,0 +1,48 @@
+*{
+    box-sizing: border-box;
+}
+
+.pokalbiai {
+    overflow-y: auto;
+    display: inline-block;
+    width: 600px;
+    height: 600px;
+    margin: 5% auto;
+    border-radius: 255px 15px 225px 15px/15px 225px 15px 255px;
+    padding: 1em;
+    line-height: 1.5em;
+    background: hsla(67, 95%, 95%, 1);
+    border: solid 5px hsla(0, 95%, 35%, 1);
+    margin-left: 20px;
+    word-break: break-all;
+    word-wrap: break-word;
+}
+
+
+.data{
+   font-size: 10px;
+   color: steelblue;
+   text-align: left;
+}
+
+hr{
+   width: 100%;
+    color:hsla(0, 95%, 35%, 1) ;
+}
+
+.vardas{
+text-align: left;
+font-style: italic;
+font-size: 15px;
+color: #daa638;
+}
+
+.tekstas{
+    overflow-y: auto;
+    text-align: left;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-style: italic;
+    word-wrap: break-word;
+    word-break: keep-all;
+    
+} 

@@ -1,18 +1,16 @@
 <span>
     <div class="kontaktaiStilius">
 
-
         <div class="virsus">
-            <h1>MENIU</h1>
         </div>
 
         <div id="vidurys">
             <div class="vardai">
                 <h3>JBIT-1</h3>
-                <p>Jonas <a href="mailto:jonas@gmail.com">jonas@gmail.com</a></p>
+                <p>Jonas 1 <a href="mailto:jonas@gmail.com">jonas@gmail.com</a></p>
                 <p>Nerijus <a href="mailto:nerijus@gmail.com">nerijus@gmail.com</a></p>
-                <p>Raimondas <a href="mailto:raimondas@gmail.com">raimondas@gmail.com</a></p>
-                <p>Arnas <a href="mailto:arnas@gmail.com">arnas@gmail.com</a></p>
+                <p>Raimondas 4 <a href="mailto:raimondas@gmail.com">raimondas@gmail.com</a></p>
+                <p>Arnas 4.5 <a href="mailto:arnas@gmail.com">arnas@gmail.com</a></p>
                 <p>Egidijus <a href="mailto:egidijus@gmail.com">egidijus@gmail.com</a></p>
                 <p>Virginijus 23 <a href="mailto:virginijus@gmail.com">virginijus@gmail.com</a></p>
                 <p>Žydrūnas <a href="mailto:zydrunas@gmail.com">zydrunas@gmail.com</a></p>
@@ -25,23 +23,19 @@
                     width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
             </div>
 
-            <div >
-                <form class="parasytiZinute" #zinuteIsKontaktu ="ngForm"(ngSubmit)="siustiZinute(zinuteIsKontaktu)">
-                    <label for="na-me-kont">Vardas</label><input type="text" id="na-me-kont" name="nameKont" ngModel>
-                    <label for="e-mail-kont">Email</label><input type="email" id="e-mail-kont" name="emailKont" ngModel>
-                    <label for="zinute-kont">Parašykite žinutę</label><textarea type="text" id="zinute-kont"
-                        name="zinuteKont"ngModel></textarea>
+            <div>
+                <form class="parasytiZinute" #zinuteIsKontaktu="ngForm" (ngSubmit)="siustiZinute(zinuteIsKontaktu)">
+                    <input type="text" id="na-me-kont" name="nameKont" placeholder="Vardas" ngModel>
+                    <input type="email" id="e-mail-kont" name="emailKont" placeholder="Email" ngModel>
+                    <textarea type="text" id="zinute-kont" name="zinuteKont" placeholder="Parašykite žinutę..."
+                        ngModel></textarea>
                     <button type='submit' id="siusti">Siųsti</button>
                 </form>
             </div>
-
         </div>
 
         <div class="apacia">
-
-
             <div>
-               
             </div>
             <div class="kontaktai">
                 <p style="size: 20px;">KONTAKTAI</p>
@@ -60,10 +54,6 @@
                 Mano AUTO man – vieninteliai namai.
             </pre>
             </div>
-
-
-
-
         </div>
     </div>
 </span>

@@ -10,36 +10,33 @@ import { ApiService } from 'src/app/servisai/api.service';
 })
 export class VartotojaiComponent implements OnInit {
 
-  users: any = [];
+  usersYes: any = [];
   usersNo: any = [];
+  usersNull: any = [];
 
   constructor(private api: ApiService) {
   }
 
-  get usersUrl(): string {
-    return this.api.usersUrl;
+  get users() {
+    return this.api.users
   }
 
   ngOnInit() {
     this.getUsers();
-    this.getUsersNo();
   }
 
   getUsers() {
     /*this.api.getUsers().subscribe(data => this.users = data, error => console.log(error));*/
     this.api.getUsers().subscribe((data: any) => {
-      this.users = data.filter((user:any) => user.is_logged === 1)
-  },
-  
-  (error: any) => console.log(error));}
+      this.api.users = data
+      this.usersYes = this.api.users.filter((user: any) => user.is_logged === 1)
+      this.usersNo =this.api.users.filter((user: any) => user.is_logged === 0)
+      this.usersNull =this.api.users.filter((user: any) => user.is_logged === null)
+    },
 
-  getUsersNo() {
-    /*this.api.getUsers().subscribe(data => this.users = data, error => console.log(error));*/
-   this.api.getUsersNo().subscribe((data: any) => {
-      this.usersNo = data.filter((user:any) => user.is_logged === null)
-  },
-  
-  (error: any) => console.log(error));}
+      (error: any) => console.log(error));
+  }
 
-  
+
+
 }
