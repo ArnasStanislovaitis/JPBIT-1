@@ -34,7 +34,10 @@ export class PagrindinisComponent implements OnInit {
 
    for (let index = 0; index < this.VisosZinutes.length; index++) {
      const element: any = this.VisosZinutes[index];
-     this.firestore.collection('messages').doc(element.id).delete();
+    
+      this.firestore.collection('messages').doc(element.id).delete();
+    
+     
      
    }
 
