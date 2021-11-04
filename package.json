@@ -1,5 +1,8 @@
 {
   "dependencies": {
-    "@angular/fire": "^7.1.1"
+    "@angular/fire": "^7.1.1",
+    "deploy": "^1.0.3",
+    "firebase": "^9.2.0",
+    "init": "^0.1.2"
   }
 }
